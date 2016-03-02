@@ -1,0 +1,619 @@
+<HTML>
+<HEAD>
+<TITLE> Linux Ýþletim Sistemi: Dosya ve Dizin Ýþlemleri</TITLE>
+</HEAD>
+<BODY>
+<A HREF="lis-3.html">Geri</A>
+<A HREF="lis-5.html">Ýleri</A>
+<A HREF="lis.html#toc4">Ýçindekiler</A>
+<HR>
+<H2><A NAME="s4">4. Dosya ve Dizin Ýþlemleri</A></H2>
+
+
+<P>Týpký MS-DOS'ta olduðu gibi Linux dosya yapýsýnýn da hiyerarþik bir
+yapýya sahip olduðunu söylemiþtik. Temel dosya bilgisi önceki konularda
+anlatýldýðýndan burada sadece dosya ve dizinlerle ilgili özelliklere
+deðinilecektir.</P>
+
+<H2><A NAME="ss4.1">4.1 Eriþim Haklarý</A></H2>
+
+
+<P>Eriþim haklarý, Linux dosya sistemi güvenliðinin belkemiðini
+oluþturur. Her dosyaya ayrý verilebilen eriþim izinleri sayesinde çok
+daha rahat bir sistem yönetimi gerçekleþtirilebilir. Bu, konuya sadece
+sistem görevlisi tarafýndan yaklaþýldýðý zaman çýkartýlabilecek bir
+sonuçtur. Kullanýcý bazýnda eriþim haklarý bazen daha da anlamlý
+olabilir. Yanlýþ kullanýldýðýnda hoþ olmayan süprizlere yol
+açabilir. Linux altýnda üç çeþit eriþim hakký vardýr :</P>
+<P>
+<UL>
+<LI><B>Okuma izni</B> : Dosyanýn okuma izni varsa içeriði görülebilir, dizinin okuma izni varsa içerdiði dosyalarýn listesi alýnabilir.</LI>
+<LI><B>Yazma izni</B> : Dosyanýn yazma izni varsa dosyayý deðiþtirebilir veya silebilirsiniz. Dizine yazma izni verildiðinde dizin altýndaki dosyalar yazýlabilir veya silinebilir.</LI>
+<LI><B>Çalýþtýrma izni</B> : Dosyayý çalýþtýrma hakkýný verir.</LI>
+</UL>
+</P>
+<P>Bir dosya veya dizin ilk yaratýldýðý anda Linux tarafýndan öntanýmlý
+bazý izinler verilir. Genellikle bu izin çalýþtýrma ve okumadýr. Dosyanýn
+oluþma anýnda verilen izini deðiþtirmek için eriþim yetki kalýbý olarak
+da bilinen <CODE>umask</CODE> komutu kullanýlýr. Daha fazla bilgi için komuta
+ait man dosyasýna bakýn.</P>
+<P>Eriþim haklarýnýn dýþýnda bir dosyanýn üç izin düzeyi daha vardýr. Bunlar,
+dosyanýn sahibi, dosyanýn grubu ve diðer kullanýcýlardýr. Dosyanýn sahibi,
+o dosyayý oluþturan kiþidir. Her kullanýcýnýn bir grubu da olduðu için,
+dosya oluþturulurken kullanýcý hangi grupta ise dosya da o gruba ait
+olacaktýr. Dosyanýn sahibi olmayan ve grubu da dosyanýn grubuyla uyuþmayan
+sistemdeki kullanýcýlar ``diðer'' sýnýfýna girerler. Gruplar hakkýnda daha
+fazla bilgi için <EM>Linux Sistem Yönetimi</EM> konusuna bakýn.</P>
+
+
+<H3>Dosya Ýzinlerinin Deðiþtirilmesi</H3>
+
+
+<P>Dosya izin bilgilerini görebilmek için <CODE>ls</CODE> komutu, <CODE>-l</CODE>
+parametresiyle kullanýlýr. Aþaðýdaki dosya üzerindeki eriþim haklarýna
+göz atalým :</P>
+<P>
+<PRE>
+-rwxr-xr-x   2 gorkem   users          182 Feb 12 03:58 deneme
+</PRE>
+</P>
+<P>Dosya bilgisinin en sol kýsmýnda izin haklarý yeralýr. En baþtaki ``-''
+iþareti bunun düz dosya olduðunu belirtir. ``gorkem'', dosyanýn sahibi;
+``users'' ise grubudur. Ardýndan sýrayla uzunluk, son deðiþtirilme tarihi ve
+dosya ismi gibi bilgiler gelir. Son harf kümesine dosyanýn modu da denir.</P>
+<P>Solda yeralan r,w ve x karakterleri sýrayla okuma, çalýþtýrma ve yazma
+haklarýný belirtir. En soldaki ``-'' iþaretini ayýrdýðýmýz zaman geri
+kalan harfleri üç adet üçlü grup haline getirelim:</P>
+<P>
+<PRE>
+rwx     r-x    r-x
+</PRE>
+</P>
+<P>Sýrayla birinci harf kümesi dosya sahibinin izinlerini, ikinci harf kümesi grup izinleri ve son küme de diðer kullanýcýlarýn izinlerini belirtir. Buna göre yukarýdaki dosyada</P>
+<P>
+<UL>
+<LI><CODE>rwx</CODE>  : kullanýcý okuyabilir, yazabilir, çalýþtýrabilir</LI>
+<LI><CODE>r-x</CODE>  : grup okuyabilir, çalýþtýrabilir fakat yazamaz. </LI>
+<LI><CODE>r-x</CODE>  : diðerleri okuyabilir, çalýþtýrabilir fakat yazamaz. </LI>
+</UL>
+</P>
+<P>Sol baþtaki karakter ``d'' olsaydý, bir dizini inceliyor olacaktýk.</P>
+<P>Dosyanýn izinlerini deðiþtirmek için <CODE>chmod</CODE> komutu kullanýlýr. Bu
+komutu kullanýrken hangi izin düzeyine (kullanýcý, grup veya diðerleri)
+hangi izinlerin verileceði veya kaldýrýlacaðý yazýlýr.</P>
+<P>Örnek olarak yukarýdaki dosyanýn okuma iznini kaldýrmak için </P>
+<P>
+<PRE>
+$ chmod -r deneme 
+</PRE>
+</P>
+<P>kullanýlabilir. "-" iþareti, iznin kaldýrýlacaðýný belirtir. Ýzin vermek için ise "+" yazýn. Dosyanýn yeni görüntüsü þöyle olur : </P>
+<P>
+<PRE>
+--wx--x--x   2 gorkem   users          182 Feb 12 03:58 deneme
+</PRE>
+</P>
+<P>Sadece grubun, sadece kullanýcýnýn veya sadece diðerlerinin eriþim hakkýný deðiþtirebilmek için her izin düzeyi için bir harf tanýmlanmýþtýr. Kullanýcý için "u", grup için "g" ve diðerleri için "o" yazarak belirli bir izin düzeyi için eriþim hakkýný deðiþtirmek mümkün olur. Bu üç harf, izinden hemen önce yazýlýr.</P>
+<P>
+<PRE>
+$ chmod u+x deneme              (dosyanin sahibi calistirabilir)
+$ chmod o+r t2sac               (digerleri okuyabilir)
+$ chmod g-w deneme              (dosyanin grubu yazamaz)
+</PRE>
+</P>
+<P>Her izin için ayný zamanda sayýlar da tanýmlanmýþtýr. Dosyanýn eriþim izinlerinideðiþtirmek için her izne ait sayýlarý kullanabilirsiniz. Aþaðýdaki tabloda, her izin düzeyi (dosyanýn sahibi, grubu ve diðerleri) için üçer tane olmak üzere toplam 9 sayýdan oluþan izin numaralarýný görebilirsiniz. Bir izni vermek için sýrayla numaralarý toplayýn. Örneðin sahibinin okumasý (400), yazmasý (200), çalýþtýrmasý (100), grubun okumasý (40), çalýþtýrmasý (10) ve diðerlerinin okumasý (4) ve çalýþtýrmasý (1) için kullanýlan rakamlarýn toplamý 755'tir. </P>
+<P>
+<PRE>
+$ chmod 755 deneme
+</PRE>
+</P>
+<P>
+<BR>
+<HR>
+400      sahibi okur<BR>
+200      sahibi yazar<BR>
+100      sahibi çalýþtýrýr<BR>
+<HR>
+040      grubu okur<BR>
+020      grubu yazar<BR>
+010      grubu çalýþtýrýr<BR>
+<HR>
+004      diðerleri okur<BR>
+002      diðerleri yazar<BR>
+001      diðerleri çalýþtýrýr<BR>
+<HR>
+
+</P>
+<P>Baþka bir deðiþiklikle konuyu pekiþtirelim. Sahibinin okumasý (400),
+yazmasý (100), grubun okumasý (40), diðerlerinin okumasý (4) için izin
+numarasýný bulmak için bu cümlede parantez içinde yeralan sayýlarý
+toplarsak 644 yapacaktýr.</P>
+<P>
+<PRE>
+$ chmod 644 deneme
+</PRE>
+</P>
+<P>Aynen dosyalarda olduðu gibi, bir dizinin de sahibi ve grubu vardýr. </P>
+
+
+
+<H2><A NAME="ss4.2">4.2 Dosyanýn Sahibinin ve Grubunun Deðiþtirilmesi</A></H2>
+
+
+<P>Bir dosyanýn sahibini sadece sistemdeki <EM>root</EM> kullanýcý deðiþtirebilme yetkisine sahiptir. Dosya sahibinin deðiþtirilmesi için <CODE>chown</CODE> komutu kullanýlabilir. Yukarýdaki dosyanýn sahibini <EM>ozgur</EM> isimli kullanýcý yapalým. </P>
+<P>
+<PRE>
+# chown ozgur deneme 
+</PRE>
+</P>
+<P>Dosyanýn yeni hali þöyle olur : </P>
+<P>
+<PRE>
+-rwxr-xr-x   2 ozgur   users          182 Feb 12 03:58 deneme
+</PRE>
+</P>
+<P><CODE>chgrp</CODE> komutu yardýmýyla da dosyanýn grubunu deðiþtirilebilir. Yukarýdaki dosyanýn grubunu www yapmak için </P>
+<P>
+<PRE>
+# chgrp www deneme 
+</PRE>
+</P>
+<P>komutu kullanýlabilir. <CODE>chown</CODE> komutu, dosyanýn hem kullanýcýsýný, hem de grubunu deðiþtirme özelliðine sahiptir. chown komutundan sonra kullanýcý ve grup isimlerini aralarýnda bir nokta kalacak þekilde yazýn. </P>
+<P>
+<PRE>
+$ chown ozgur.www deneme 
+$ ls -l deneme
+-rwxr-xr-x   2 ozgur   www          182 Feb 12 03:58 deneme
+</PRE>
+</P>
+
+
+<H2><A NAME="ss4.3">4.3 Diðer Dosya Sistemlerinin Kullanýlmasý</A></H2>
+
+
+<P>Bir Linux iþletim sisteminde dosyalarýn ve dizinlerin herbirisi sabit disk, CDROM veya diðer bilgi saklamaya yarayan cihazlarýn birer parçasý olan "dosya sistemlerinde" tutulur. Linux'un desteklediði pek çok dosya sistemi vardýr ve bunlarýn her birisinin veri depolarken kullandýklarý yöntem birbirinden farklýdýr. </P>
+<P>Linux'ta her dosya sistemi farklý bir dizinde tutulur ve bu dizinlerin bilgisi <CODE>/etc/fstab</CODE> dosyasýnda yeralýr. Açýlýþ anýnda bu dosyada hangi dosya sistemlerinin hangi dizinler altýna yerleþtirileceði okunur ve buna göre makina açýlýr. Linux, kendisi için özel olarak geliþtirilen ext2 dosya sistemini kullanýr.</P>
+<P>Bir sistem görevlisi olarak çeþitli dosya sistemlerini tanýmalý, bu dosya sistemleri üzerinde hata oluþmasý durumunda zararý en aza indirecek yolu bilmelisiniz. Bilgisayar baþýnda geçireceðiniz zamanýnýzýn büyük bir bölümünü dosya sistemleri üzerinde harcayacaksýnýz. </P>
+
+
+<H3>mount Ýþlemi</H3>
+
+
+<P>Bir dosya sisteminin kullanýlabilmesi için boþ bir dizin altýna yerleþtirilmesi gerekir. Ancak bu gerçekleþtirilirse sözkonusu dosya sistemini oluþturan dosyalar üzerinde iþlem yapýlabilir. Bu iþlem mount komutu yardýmýyla yapýlýr.</P>
+<P><CODE>mount</CODE> komutunun þu þekilde kullanýlýr : </P>
+<P>
+<PRE>
+mount -t &lt;tip&gt; &lt;nereye&gt; &lt;aygit&gt;
+</PRE>
+</P>
+<P><B>tip</B> : Dosya sistemi çeþidi. Örnek dosya sistem çeþitleri arasýnda ext2, minix, msdos sayýlabilir. Dosya sistemleri hakkýnda daha geniþ bilgi için Çekirdek konfigürasyonu konusuna bakýn. Genellikle mount programý ne tür bir diske
+eriþtiðini otomatik olarak anlayacaktýr.</P>
+<P><B>nereye</B> : mount edilecek dosya sistemi hangi dizin altýna yerleþtirileceðini belirtir.</P>
+<P><B>aygýt</B> : Üzerinde dosya sisteminin bulunduðu sabit disk, CD-ROM benzeri aygýt. </P>
+<P>Linux'a baðlý olan tüm donanýmlara ait bir giriþ, <CODE>/dev</CODE> dizini altýnda bulunur. Bu dizin altýndaki dosyalar özel olarak tanýmlanmýþtýr ve bunlara kýsaca "düðüm" adý verilir. Örneðin <CODE>/dev/hda2</CODE>, birinci IDE sabit diskin ikinci bölümünü; <CODE>/dev/tty1</CODE> ise birinci sanal konsolu gösterir. </P>
+<P>Çeþitli sabit disklere ait <CODE>/dev</CODE> düðümleri, <EM>Linux Kurulumu</EM> bölümünde detaylý olarak anlatýlmýþtý. mount programý bu düðümlere ihtiyaç duyacaktýr. Bu yüzden bir dosya sistemini eriþilebilir hale getirebilmek için hangi düðüm ismine sahip olduðunu bilmelisiniz. Örnek olarak CD-ROM için <CODE>/dev/cdrom</CODE>, birinci disket sürücü için <CODE>/dev/fd0</CODE> gibi.</P>
+<P>CD-ROM sürücüsünü <CODE>/mnt</CODE> altýna mount etmek için </P>
+<P>
+<PRE>
+# mount -t iso9660 /dev/cdrom /mnt 
+</PRE>
+</P>
+<P>yazýn. Eðer çekirdekte CD-ROM dosya sistemi desteði varsa ve sistem açýlýrken çekirdek CD-ROM'u tanýmýþsa <CODE>/mnt</CODE> dizini altýna CD'deki dosya sistemi yerleþtirilir. Buna benzer þekilde MS-DOS disket içeren disket sürücüyü ve üzerinde ext2 dosya sistemi bulunan ikinci IDE sabit diskin birinci bölümünü sýrasýyla <CODE>/mnt/disket</CODE> ve <CODE>/mnt/disk</CODE> dizinlerine bindirmek için</P>
+<P>
+<PRE>
+# mount -t msdos /dev/fd0 /mnt/disket
+</PRE>
+</P>
+<P>ve </P>
+<P>
+<PRE>
+# mount -t ext2 /dev/hdb1 /mnt/disk
+</PRE>
+</P>
+<P>yazýlabilir. Bir mount iþleminin tersini yapmak ve dosya sistemini eriþilemez kýlmak için <CODE>umount</CODE> komutu kullanýlýr. <CODE>/disk</CODE> altýndaki <CODE>/dev/hdb1</CODE> sabit disk bölümünü umount etmek için</P>
+<P>
+<PRE>
+# umount /disk
+</PRE>
+</P>
+<P>veya</P>
+<P>
+<PRE>
+# umount /dev/hdb1
+</PRE>
+</P>
+<P>kullanýlýr. Her iki yazým þekli de kabul edilir. Son olarak o an
+sistemde bindirilmiþ halde bulunan tüm dosya sistemlerini görmek için
+<CODE>mount</CODE> komutunu parametresiz yazýn. Bu komut hakkýnda daha detaylý
+bilgi ve aldýðý diðer parametreler için man sayfasýna bakýn.</P>
+<P><CODE>mount</CODE> ve <CODE>umount</CODE> komutlarý ile bir dizin yapýsýný disk üzerinde
+konumlandýrýrken veya ayýrýrken üzerinde iþlem yapýlan dizinde
+bulunmamanýz, ya da o dizinde baþka bir süreç çalýþýyor olmamasý
+gereklidir. Aksi takdirde aþaðýdaki hata mesajýný alýrsýnýz:</P>
+<P>
+<PRE>
+# pwd
+/disk
+# umount /disk
+umount: /dev/hdb1: device is busy
+</PRE>
+</P>
+<P>Yapmanýz gereken, ayýracaðýnýz dizinden dýþarý çýkýp tekrar denemek. Diðer
+bir seçenek de <CODE>fuser</CODE> komutunu kullanmak. Bu komut, ayýrmak istediðiniz
+dizini kullanan tüm süreçleri ekranda gösterir. Böylelikle
+rahatlýkla yukarýdaki örnekteki gibi <CODE>umount</CODE> iþlemini
+gerçekleþtirebilirsiniz. <CODE>fuser</CODE> komutunun -km seçeneðiyle o dizini 
+kullanan süreçleri öldürülebilir.</P>
+<P>
+<PRE>
+# cd /
+# fuser /disk
+/disk:                   78c
+# fuser -km /disk
+# umount /disk
+</PRE>
+</P>
+<P><CODE>fuser</CODE> komutunu kullanýrken dikkatli olun, zira sistemi kilitlenme noktasýna
+getirebilirsiniz.</P>
+
+
+<H3>Dosya Sistemi Bilgileri</H3>
+
+
+<P>Linux açýlýrken <CODE>mount</CODE> komutu yardýmýyla root dosya sistemine ekleyeceði her deðiþik dosya sistemini <CODE>/etc/fstab</CODE> dosyasýndan okur ve iþleme koyar. Aþaðýda örnek bir fstab dosyasý yeralýyor.</P>
+<P>
+<PRE>
+/dev/hda2       /               ext2            defaults  1 1
+/swap           none            swap            defaults  1 1
+/dev/cdrom      /cdrom          iso9660         defaults  1 1 
+none            /proc           proc            defaults  1 1
+/dev/hda1       /dos            msdos           defaults  1 1 
+</PRE>
+</P>
+<P>Çekirdek açýlýþ mesajlarý içinde </P>
+<P>
+<PRE>
+VFS: Mounted root (ext2 filesystem) readonly.
+</PRE>
+</P>
+<P>gibi bir satýr göreceksiniz. Sistem açýlýrken en önce <CODE>/</CODE> dosya sistemini mount eder. Bu sayede bu dosya sistemi altýnda yeralan ve hayati önem taþýyan yazýlýmlara (<CODE>fsck</CODE>, <CODE>mount</CODE> gibi) ulaþýr. Daha sonra yerel dosya sistemleri ve en son da að üzerinden eriþilen dosya sistemlerine (NFS) baðlanýr. fstab dosyasýnda kullanýcýnýn kendi dosyalarýný yerleþtiremediði, fakat sistem tarafýndan kullanýlan <EM>swap</EM> ve <EM>proc</EM> dosya sistemleri için de mount bilgileri bulunur. </P>
+<P>Yukarýdaki fstab dosyasýnda ext2 dosya sistemine sahip <CODE>/dev/hda2</CODE> sabit disk bölümü, / dizinini oluþturuyor. MS-DOS formatlý <CODE>/dev/hda1</CODE> bölümü de <CODE>/dos</CODE> dizinine eriþilebilir olarak açýlýþ anýnda eklenecektir. </P>
+<P>Sistemdeki CD-ROM sürücü <CODE>/cdrom</CODE> dizini altýna yerleþtirilmiþ olup root kullanýcý bunu istediði dizine koyabilir. Bu dosyaya, mount komutundaki gibi parametreler de eklenebilir. Dördüncü sýrada yeralan defaults parametresinin yanýna eklemek istediðiniz opsiyonlarý yazýn. Bu parametrelerden sýkça kullanýlan bir tanesi de "user" olup root dýþýndaki kullanýcýlara mount hakkýný verir. CD-ROM sürücüyü normal sistem kullanýcýlarýnýn mount veya umount yapabilmesi için fstab dosyasýndaki ilgili satýrý</P>
+<P>
+<PRE>
+/dev/cdrom      /cdrom          iso9660                 defaults,user 1 1 
+</PRE>
+</P>
+<P>satýrýyla deðiþtirin. <EM>defaults</EM> parametresi ise , halihazýrdaki dosya sistemini okunup yazýlabildiðini, asenkron olduðunu, üzerindeki bilgileri bloklar halinde alýp verdiðini (buna diðer örnekler CD-ROM ve disket sürücülerdir), içerdiði programlarýn çalýþtýrýlabilir olduðunu ve normal kullanýcýlarýn <CODE>mount</CODE>, <CODE>umount</CODE> yapamadýðýný gösterir. <EM>user</EM> parametresiyle kullanýcýlara <CODE>mount</CODE> ve <CODE>umount</CODE> hakký yukarýda verilmiþtir.</P>
+
+
+
+<H3>Dosya Sistemi Yaratýlmasý ve Kontrolü</H3>
+
+
+<P>Bazen MS-DOS altýndan oluþturulamayan dosya sistemlerini (ext2 gibi) oluþturmak gerekebilir. Linux altýnda bir dosya sistemini oluþtururken ayný zamanda bunu kontrol eden programlar vardýr. Bunlarýn en çok kullanýlaný, Slackware sürümünde gelen <CODE>mkfs</CODE>/'tir. </P>
+<P><CODE>mkfs</CODE> ile Linux native (ext2) dosya sistemi oluþturmak için <CODE>mkfs.ext2</CODE> programý kullanýlýr. </P>
+<P>
+<PRE>
+mkfs.ext2 &lt;aygit&gt; &lt;blok-sayisi&gt;
+</PRE>
+</P>
+<P>"aygýt" yerine üzerine dosya sistemi kurulacak olan cihazýn <CODE>/dev</CODE> dizini altýndaki düðüm dosyasýnýn ismi yazýlýr. Blok sayýsý yerine, <CODE>fdisk</CODE> yazýlýmýndan o bölümün kaç blok olduðunu öðrenip bu sayýyý girmelisiniz. Bir blok 1024 bayttan oluþur. Örneðin</P>
+<P>
+<PRE>
+# mke2fs /dev/hda3 163829
+</PRE>
+</P>
+<P>komutu, <CODE>/dev/hda3</CODE> disk bölümünde ext2 dosya sistemi kurar. Bu komutu kullanmadan önce iyi düþünün, zira burada yeralan tüm dosyalar silinir ve bu hatanýn geri dönüþü olmaz. Aþaðýdaki komut ile bir disket üzerinde ext2 dosya sistemi kuruluyor.</P>
+<P>
+<PRE>
+# mke2fs /dev/fd0 1440
+</PRE>
+</P>
+<P><CODE>mke2fs</CODE> ile <CODE>mkfs.ext2</CODE> komutlarý aynýdýr. Benzer þekilde, MS-DOS dosya sistemi yaratmak için <CODE>mkfs.msdos</CODE>, minix dosya sistemi yaratmak için <CODE>mkfs.minix</CODE> kullanýlabilir. Blok sayýsý girilmez ise <CODE>mke2fs</CODE> bunu otomatik olarak
+bulacaktýr.</P>
+<P>Herhangi bir sebepten dolayý diskte bozulma ve veri kaybýný en aza indirmek için de yazýlýmlar vardýr. <CODE>fsck</CODE> ile dosya sistemi kontrolü yapýlabilir. <CODE>fsck</CODE> ile ext2, <CODE>dosfsck</CODE> (veya <CODE>fsck.msdos</CODE>) ile MS-DOS formatlý alanlar kontrol edilir. </P>
+<P>
+<PRE>
+linux:~# fsck /dev/hda2
+Parallelizing fsck version 0.5b (14-Feb-95)
+e2fsck 0.5b, 14-Feb-95 for EXT2 FS 0.5a, 95/03/19
+/dev/hda2 is mounted.  Do you really want to continue (y/n)? yes
+
+Pass 1: Checking inodes, blocks, and sizes
+Pass 2: Checking directory structure
+Pass 3: Checking directory connectivity
+Pass 4: Checking reference counts
+Pass 5: Checking group summary information
+Fix summary information&lt;y&gt;? yes
+
+Block bitmap differences: -46486 -46487 -46488 -46489 -46490.  FIXED
+Free blocks count wrong for group 5 (2803, counted=2808).  FIXED
+Free blocks count wrong (16326, counted=16331).  FIXED
+
+/dev/hda2: ***** FILE SYSTEM WAS MODIFIED *****
+/dev/hda2: ***** REBOOT LINUX *****
+/dev/hda2: 3494/29632 files, 42904/59235 blocks
+</PRE>
+</P>
+<P>Bir dosya sistemini kontrol etmeden önce okunan bölümü root dosya sisteminden ayýrýn ve kontrol iþleminden sonra bilgisayarý kapatýp tekrar açýn. </P>
+<P><CODE>debugfs</CODE> programý, dosya sistemi parametrelerini incelemek için
+kullanýlýr. Disk üzerine doðrudan eriþým yaptýðý için dikkatli
+kullanmalýsýnýz. ext2fs yardýmýyla kurtarýlamayan bazý dosyalar (özellikle
+silinmiþ dosyalar) <CODE>debugfs</CODE> yardýmýyla kurtarýlabilir. </P>
+
+
+
+<H2><A NAME="ss4.4">4.4 Sembolik Baðlantýlar</A></H2>
+
+
+<P>Bazý durumlarda, bir dosyayý oluþturup bu dosyanýn baþka bir dosyayý iþaret etmesi istenebilir. Genellikle sistem yöneticileri tarafýndan kullanýlan sembolik baðlantý yardýmýyla bir dosya veya dizin, bunlara karþýlýk gelen baþka bir dosya veya dizin olarak gösterilir.</P>
+<P>Aþaðýda bir sembolik baðlantý örneði yeralýyor. Sistem görevlisi, <CODE>/root</CODE> dizini altýndayken <CODE>/usr/src/linux</CODE> dizinine geçmek istiyor. <CODE>/usr/src/linux</CODE> dizinine iþaret eden bir baðlantý kurmak için <CODE>ln</CODE> komutu kullanýlýr. -s parametresi, bu baðlantýnýn sembolik olacaðýna iþaret eder.</P>
+<P>
+<PRE>
+ln -s &lt;nereye-baglanti-yapilacak&gt; &lt;hangi-isimle-yapilacak&gt;
+</PRE>
+</P>
+<P>
+<PRE>
+linux:~# ls -l
+total 116
+drwxr-xr-x   2 root     root         1024 Feb 14 08:13 kernel
+-rw-r--r--   1 root     root       115695 Sep 15  1994 lodlin15.zip
+drwx------   2 root     root         1024 Jan  7  1980 mail
+-rw-r--r--   1 root     root            0 Feb 15 08:14 typescript
+linux:~# ln -s /usr/src/linux linux
+linux:~# ls -l
+total 116
+drwxr-xr-x   2 root     root         1024 Feb 14 08:13 kernel
+-rw-r--r--   1 root     root       115695 Sep 15  1994 lodlin15.zip
+drwx------   2 root     root         1024 Jan  7  1980 mail
+lrwxrwxrwx   1 root     root            9 Feb 15 08:14 linux -&gt; /usr/src/linux
+-rw-r--r--   1 root     root            0 Feb 15 08:14 typescript
+</PRE>
+</P>
+<P>Bu iþlemden sonra kullanýcýnýn <CODE>/usr/src/linux</CODE> dizinine geçmesi için <CODE>cd linux</CODE>" yazmasý yetecektir. Sembolik baðlantý dosyasýný diðerlerinden ayýran, satýrýn en solundaki <CODE>l</CODE> karakteridir. </P>
+
+
+
+<H2><A NAME="ss4.5">4.5 Dosya Arþivleme ve Sýkýþtýrma </A></H2>
+
+
+<P>Linux altýnda dosya arþivlenmesi ve sýkýþtýrýlmasý neredeyse belirli ve standartlaþmýþ birkaç komut ile gerçekleþtiriliyor. <CODE>tar</CODE> komutu yardýmýyla istenilen dosyalarý arþivleyebilir, bunlarýn üzerine yenilerini ekleyebilir, istediðiniz zaman da tekrar açýp eski haline getirebilirsiniz. GNU <CODE>gzip</CODE> komutu ise dosyalarýn sýkýþtýrýlmasý (zip) ve sýkýþtýrýlmýþ dosyalarýn açýlmasý (unzip) iþlemlerini yapabiliyor. Fazla disk alanýnýz yoksa bu iki komut her zaman yardýmýnýza koþacaktýr.</P>
+
+
+<H3>Dosya Arþivleme</H3>
+
+
+<P><CODE>tar</CODE> (Tape ARchive) programý, bir veya birden fazla dosyayý tek bir forma sokar. Genellikle bir dizin ve bu dizinin altýnda yer alan tüm alt dizinleri biraraya getirmek için kullanýlýr. <CODE>tar</CODE>, dosyalarýn üzerinde sýkýþtýrma iþlemini normalde uygulamaz. Fakat <CODE>tar</CODE>'ýn GNU sürümü (Linux'ta da kullanýlan) bu iþlemi gzip kullanmadan da yapabiliyor.</P>
+<P><CODE>tar</CODE> komutuna bir örnek verelim : </P>
+<P>
+<PRE>
+$ tar -cf arsiv.tar tmp/
+</PRE>
+</P>
+<P>Bu komut, <CODE>-c</CODE> (create archive) parametresi yardýmýyla <CODE>tmp</CODE> dizini altýndaki herþeyi paketleyip <CODE>arsiv.tar</CODE> isimli dosyaya yollar. <CODE>-f</CODE> parametresi, hangi dosyaya yazýlacaðýný belirtir. Ýstediðiniz zaman dosyayý tekrar açmak isterseniz :</P>
+<P>
+<PRE>
+$ tar -xf arsiv.tar 
+</PRE>
+</P>
+<P>komutunu kullanýn. <CODE>-x</CODE> (extract) parametresi, <CODE>-f</CODE> ile belirtilen dosyayý açacaktýr.</P>
+<P><CODE>-r</CODE> opsiyonu ile daha önce yaratýlmýþ bir arþive dosya eklenebilir. Böylece dosyayý açma ve tekrar arþiv oluþturma iþleminden kurtulmuþ olursunuz.</P>
+<P>
+<PRE>
+$ tar -rf arsiv.tar ekleme.txt
+</PRE>
+</P>
+<P>Dosyanýn içeriðini önceden görebilmek için <CODE>-t</CODE> parametresini kullanýn ve bu iþlemi de alýþkanlýk haline getirin. Bazý durumlarda arþivlenmiþ yazýlým, kendine ait bir dizin açmak yerine içerdiði dosyalarý bulunduðu yere yazabilir.</P>
+<P>
+<PRE>
+tar -tf arsiv.tar 
+</PRE>
+</P>
+<P>Hangi dosyalarýn açýldýðýný ekranda görebilmek için <CODE>-v</CODE> parametresini ekleyin:</P>
+<P>
+<PRE>
+# tar -zcvf tmp.tgz /tmp
+tar: Removing leading / from absolute path names in the archive.
+tmp/
+tmp/tar-error
+tmp/.X11-unix/
+tmp/rc.inet1.OLD
+tmp/networks.OLD
+tmp/linux/
+tmp/linux/fss.txt
+tmp/lilo.conf
+tmp/PKGTOOL.REMOVED
+</PRE>
+</P>
+<P>Aþaðýdaki komut, arþivlenen dosyalarý diskete kaydetmeye yarýyor. Bunun için temiz bir disketi yuvasýna yerleþtirin ve aþaðýdaki satýrý yazýn.  </P>
+<P>
+<PRE>
+# tar -cf /dev/fd0 tmp/ 
+</PRE>
+</P>
+<P><CODE>tmp</CODE> dizini altýndaki herþeyi diskete kaydetmiþ olduk. Açmak için bilinen yöntemi kullanýrýz :</P>
+<P>
+<PRE>
+# tar -xf /dev/fd0
+</PRE>
+</P>
+
+
+
+<H3>Dosya Sýkýþtýrma ve Açma</H3>
+
+
+<P>Dosya sýkýþtýrma amacýyla sýkça kullanan iki yazýlým vardýr : <CODE>gzip</CODE> ve <CODE>compress</CODE>. Her iki yazýlým da <EM>Slackware Linux</EM> daðýtýmýnda bulunuyor. GNU'nun daðýtýmý olan <CODE>gzip</CODE>, <CODE>tar</CODE> ile birlikte kullanýlan ve dosya sýkýþtýrma ve arþivlemede neredeyse standart haline gelmiþ bir program. Bir dosyayý sýkýþtýrmak için parametre girmeden gzip komutunun ardýndan dosya ismini yazýn.</P>
+<P>
+<PRE>
+$ gzip elvis
+$ ls -al 
+elvis.gz
+</PRE>
+</P>
+<P><CODE>gzip</CODE> ile sýkýþtýrýlmýþ dosyalarýn sonu .gz ile biter. Bunlarý açmak için <CODE>gunzip</CODE> komutunu kullanýn:</P>
+<P>
+<PRE>
+$ gunzip elvis.gz
+</PRE>
+</P>
+<P><CODE>compress</CODE> ve <CODE>uncompress</CODE> de sýrayla bir dosyayý sýkýþtýrmak ve açmak için kullanýlýr. Aslýnda Linux'ta <CODE>uncompress</CODE> adýnda bir yazýlým yoktur, bu dosya ismi <CODE>compress</CODE> dosyasýna baðlantýlýdýr. <CODE>compress</CODE> ile sýkýþtýrýlan dosyalarýn sonu .Z ile biter.</P>
+<P>
+<PRE>
+$ ls -al web.html
+-rw-r--r--   1 gorkem   users       41450 Jan 27 13:40 web.html
+$ compress web.html
+$ ls -al web.html.Z
+-rw-r--r--   1 gorkem   users       18906 Jan 27 13:40 web.html.Z
+</PRE>
+</P>
+<P>Yukarýdaki <CODE>web.html</CODE> dosyasýný sýkýþtýrdýðýmýzda dosyanýn boyutu 41450 bayttan 18906 bayta indi. Açmak için:</P>
+<P>
+<PRE>
+$ uncompress web.html.Z
+</PRE>
+ </P>
+<P>Bir dosyanýn uzantýsýndan ne tür bir dosya olduðunu anlayamazsanýz file komutu imdadýnýza koþar. Linux'ta belirli uzantýlý dosyalarýn baþý bilinen bir harf veya harf grubu ile baþlar. file komutu dosyanýn baþýndaki karakterleri kontrol ederek ve bunlarý bir listeyle (<CODE>/etc/magic</CODE>) karþýlaþtýrarak dosyanýn ne tür olduðunu söyler.</P>
+<P>
+<PRE>
+# file tmp.gz
+tmp.tgz: gzip compressed data - deflate method , last modified: Sat Feb 15 08:21:50 1997 os: Unix
+# file tmp.tar.Z
+tmp.tar.Z: compressed data 16 bits
+</PRE>
+</P>
+
+
+<H3>Birlikte Kullaným</H3>
+
+
+<P>ftp adreslerinde Linux için yeralan yazýlýmlar genellikle <CODE>tar</CODE> ve
+<CODE>gzip</CODE>, nadiren de <CODE>tar</CODE> ve <CODE>compress</CODE> ile sýkýþtýrýlýp
+arþivelenerek saklanýrlar. Çünkü tar komutu tek baþýna arþivi sýkýþtýrmaz, bu
+iþlem için <CODE>gzip</CODE> veya <CODE>compress</CODE> kullanýlýr. Bunlarýn
+açýlabilmesi için <CODE>tar</CODE> komutu ve birkaç parametre yeterli olur.</P>
+<P>
+<PRE>
+$ ls  
+netscape-4.0.linux-elf.tar.gz
+</PRE>
+</P>
+<P>Yukarýdaki dosya önce tar ile arþivlenmiþ, ardýndan <CODE>gzip</CODE> ile sýkýþtýrýlmýþ. Tek adýmda bu iki dosyayý açmak için tar dosyasýna x ve f parametrelerinin dýþýnda z parametresini de ekleyin :</P>
+<P>
+<PRE>
+$ tar -zxf netscape-4.0.linux-elf.tar.gz
+$ ls 
+netscape-4.0.linux-elf
+</PRE>
+</P>
+<P>Eðer dosya sýkýþtýrýlýrken compress komutu kullanýlmýþsa z yerine Z parametresini yazýn.</P>
+<P>
+<PRE>
+$ ls 
+folder.tar.Z
+$ tar -Zxf folder.tar.Z
+$ ls 
+folder
+</PRE>
+</P>
+<P>Benzer þekile, bir dosyayý ayný anda hem tar ile arþivlemek, hem de sýkýþtýrmak istersek c ve f parametreleri dýþýnda compress ile Z, gzip ile z parametrelerini girmek yeterlidir. Aþaðýda sýrayla gn-gopher dizisinin önce tar ve gzip ile, ardýndan tar ve compress ile arþivlenmesi görülüyor. </P>
+<P>
+<PRE>
+$ ls
+gn-gopher/ 
+$ tar -zcf gopher.tgz gn-gopher/
+$ tar -Zcf gopher.tar.Z gn-gopher/ 
+</PRE>
+</P>
+
+
+
+
+<H2><A NAME="ss4.6">4.6 Dizin Tarama</A></H2>
+
+
+<P>Linux iþletim sistemini ilk kurduðunuz anda, yüzlerce dizin altýnda binlerce dosyanýz olacaktýr. <CODE>find</CODE> komutu, bu dosyalarýn arasýnda tarama yapabilmek için geliþtirilmiþtir. Bu komutla sadece dosya isimlerine deðil, dosyanýn sahibi, eriþim haklarý, son eriþim tarihi gibi verilere de ulaþmak mümkündür. 
+<CODE>find</CODE> komutunun en sýk kullanýþ þekli þudur : </P>
+<P>
+<PRE>
+find &lt;dizin-ismi&gt; -name &lt;ne-aratiliyor&gt;
+</PRE>
+</P>
+<P>dizin-ismi yerine taranacak olan dosyanýn bulunduðu dizin ismi yazýlýr. -name parametresinden sonra ise aranan dosyanýn ismini girin. Burada "*" ve "?" gibi joker karakterlerini de kullanabilirsiniz. (Bu gibi özel karakterler hakkýnda daha geniþ bilgi <EM>Bash kabuðu</EM> konusu altýnda bulunabilir)</P>
+<P>Aþaðýda, find komutunun kullanýmýna iliþkin birkaç örnek yeralýyor.</P>
+<P>
+<PRE>
+$ find . -name &quot;*.html&quot;         
+(bulundugunuz dizinden itibaren sonu .html ile biten dosyalari arar)
+$ find /home/halil -name &quot;screen&quot; 
+(/home/halil dizininden itibaren screen isimli dosyalari arar)
+</PRE>
+</P>
+<P>Bu komut, <CODE>-type d</CODE> parametresi yardýmýyla sadece dizin isimleri arasýnda arama yapar. </P>
+<P>
+<PRE>
+$ find /usr/ -name &quot;linux&quot; -type d 
+</PRE>
+</P>
+<P><CODE>find</CODE> komutuna bir alternatif olan <CODE>locate</CODE> komutu ile dosyalar çok kýsa bir sürede taranabiliyor. <CODE>update</CODE> komutu, her sabah belirli bir saatte sistemdeki tüm dosya ve dizin isimlerini bir veri tabanýna yükler. Daha sonra bu dosyada yeralan belirli bir dosya veya dizin ismini <CODE>locate</CODE> ile arayabilirsiniz:</P>
+<P>
+<PRE>
+# locate pico
+/usr/bin/pico
+/usr/man/man1/pico.1.gz
+</PRE>
+</P>
+<P>Yukarýdaki komut ile içinde pico kelimesi geçen dosyalarý bulduk.</P>
+
+
+<H2><A NAME="ss4.7">4.7 mtools MSDOS Arabirimi</A></H2>
+
+
+<P>Linux altýndan, MS-DOS formatlý disketlere ulaþmayý kolaylaþtýran paketin ismi <CODE>mtools</CODE> olarak biliniyor. Bu isim, paketin tüm komutlarýnýn ilk harfinin "m" olmasýndan kaynaklanmýþ. Paketle birlikte gelen çeþitli yardýmcý programlar sayesinde MS-DOS formatlý diskette yeralan dosyalar listelenebilir, silinebilir, disket formatlanabilir, hatta disketin kimliði deðiþtirilebilir.  </P>
+<P>Son çýkan <CODE>mtools</CODE> paketi, 2MB formatlý disketleri de tanýyabiliyor. Aþaðýda, <CODE>mtools</CODE> paketinden çýkan bazý komutlar ve örnek kullanýmlarý gösteriliyor.</P>
+<P><B>mdir</B> : disketin içeriðini görüntüler.</P>
+<P>
+<PRE>
+linux:~# mdir a:
+ Volume in drive A is SYSTEM_BT  
+ Directory for A:/
+
+IO       SYS       40566    9-30-93   6:20a
+MSDOS    SYS       38138    9-30-93   6:20a
+AUTOEXEC BAT          91    3-29-95  10:23a
+NDD              &lt;DIR&gt;      3-29-95  10:26a
+CHKLIST  MS           81   11-07-96   7:00p
+VGA_45           &lt;DIR&gt;      3-29-95  10:28a
+YARDIM           &lt;DIR&gt;      3-29-95  10:17a
+UTIL             &lt;DIR&gt;      3-29-95  10:17a
+VIRUS            &lt;DIR&gt;      3-29-95  10:17a
+       9 File(s)     291328 bytes free
+linux:~# 
+</PRE>
+</P>
+<P><B>mcopy</B> : Bir dosyayý Linux'tan diskete, disketten Linux'a aktarýr.</P>
+<P>
+<PRE>
+linux:~# mcopy a:/autoexec.bat .
+Copying AUTOEXEC.BAT
+</PRE>
+</P>
+<P><B>mdel</B> : DOS dosyasýný siler</P>
+<P><B>mformat</B> : Disketi formatlar.</P>
+<P><B>mmd</B> : Disket üzerinde dizin oluþturur.</P>
+<P>MSDOS <CODE>mtools</CODE> arabirimi ayný zamanda VFAT tipi uzun dosya isimlerini de ekranda gösterebilir. Eðer dosya ismi, tek bir DOS ismi içine sýðmýyorsa ve 8+3 kuralýný bozuyorsa uygun bir kýsa isim yaratýlýr.</P>
+<P>Bunun yanýnda <CODE>mtools</CODE>'un 2 Mb'lýk disketleri okuyabilme özelliði de vardýr.
+mtools paketinin konfigürasyon dosyasý <CODE>/etc/mtools.conf</CODE>'tur. Bu 
+dosyanýn kullanýmý için mtools(1) man dosyasýndan yararlanabilirsiniz.</P>
+
+
+
+
+<HR>
+<A HREF="lis-3.html">Geri</A>
+<A HREF="lis-5.html">Ýleri</A>
+<A HREF="lis.html#toc4">Ýçindekiler</A>
+</BODY>
+</HTML>

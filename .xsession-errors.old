@@ -1,0 +1,18 @@
+libGL error: pci id for fd 4: 80ee:beef, driver (null)
+libGL error: core dri or dri2 extension not found
+libGL error: failed to load driver: vboxvideo
+Script for ibus started at run_im.
+Script for auto started at run_im.
+Script for default started at run_im.
+init: unity-settings-daemon main süreci sonlandı, yeniden meydana getiriliyor
+init: gnome-session (Unity) main süreci (1334) 1 durumuyla sonlandırıldı
+init: unity-panel-service main süreci (1336) 1 durumuyla sonlandırıldı
+init: indicator-printers main süreci (1479) 1 durumuyla sonlandırıldı
+init: indicator-bluetooth main süreci (1470) TERM sinyali ile öldürüldü
+init: indicator-power main süreci (1474) TERM sinyali ile öldürüldü
+init: indicator-datetime main süreci (1476) TERM sinyali ile öldürüldü
+init: indicator-session main süreci (1482) TERM sinyali ile öldürüldü
+init: unity-settings-daemon main süreci (9414) TERM sinyali ile öldürüldü
+init: indicator-application main süreci (1493) TERM sinyali ile öldürüldü
+init: Disconnected from notified D-Bus bus
+init: hud main süreci (1331) 1 durumuyla sonlandırıldı

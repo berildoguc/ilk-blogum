@@ -1,0 +1,17 @@
+logrotate state -- version 2
+"/home/beril/.cache/upstart/update-notifier-cds.log" 2016-2-24-11:37:32
+"/home/beril/.cache/upstart/unity-settings-daemon.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/gnome-session-Unity.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/window-stack-bridge.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/indicator-power.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/unity7.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/hud.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/indicator-sound.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/update-notifier-release.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/im-config.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/indicator-bluetooth.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/dbus.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/indicator-printers.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/at-spi2-registryd.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/unity-panel-service.log" 2016-3-1-15:36:1
+"/home/beril/.cache/upstart/indicator-session.log" 2016-2-24-11:37:32

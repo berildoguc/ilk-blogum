@@ -1,0 +1,172 @@
+Error loading .desktop file /usr/share/applications/gnome-activity-log-manager-panel.desktop: constructor returned NULL
+Error loading .desktop file /usr/share/app-install/desktop/activity-log-manager:gnome-activity-log-manager-panel.desktop: constructor returned NULL
+
+(process:2118): GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'ağ kullanıcı paylaşımı' 255 hatası ile geri döndü: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error Böyle bir dosya ya da dizin yok
+Please ask your system administrator to enable user sharing.
+
+1456839510775	addons.xpi	WARN	Exception running bootstrap method shutdown on webapps-team@lists.launchpad.net: ReferenceError: sss is not defined (resource://gre/modules/addons/XPIProvider.jsm -> file:///usr/share/mozilla/extensions/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/webapps-team@lists.launchpad.net/bootstrap.js:72:4) JS Stack trace: shutdown@resource://gre/modules/addons/XPIProvider.jsm -> file:///usr/share/mozilla/extensions/%7Bec8030f7-c20a-464f-9b0e-13a3a9e97384%7D/webapps-team@bootstrap.js:72:5 < XPI_callBootstrapMethod@XPIProvider.jsm:4232:9 < shutdownObserver@XPIProvider.jsm:1969:1
+
+(process:2246): GLib-CRITICAL **: g_slice_set_config: assertion 'sys_page_size == 0' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-03-01 15:38:59 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-03-01 15:38:59 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+libGL error: pci id for fd 13: 80ee:beef, driver (null)
+libGL error: core dri or dri2 extension not found
+libGL error: failed to load driver: vboxvideo
+
+(unity-control-center:2296): GLib-CRITICAL **: Source ID 306 was not found when attempting to remove it
+1456839874985	addons.repository	WARN	Unknown type id when parsing addon: 5
+1456839874986	addons.repository	WARN	Unknown type id when parsing addon: 5
+1456839874987	addons.repository	WARN	Unknown type id when parsing addon: 5
+1456839875507	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+1456839875747	addons.update-checker	WARN	Update manifest for online-accounts@lists.launchpad.net did not contain an updates property
+1456839876036	addons.update-checker	WARN	Update manifest for webapps-team@lists.launchpad.net did not contain an updates property
+1456839876061	addons.update-checker	WARN	Update manifest for ubufox@ubuntu.com did not contain an updates property
+1456839876066	addons.update-checker	WARN	Update manifest for {2e1445b0-2682-11e1-bfc2-0800200c9a66} did not contain an updates property
+ERROR 2016-03-01 15:48:50 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-03-01 15:48:50 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-03-01 15:48:50 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-03-01 15:58:57 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-03-01 15:58:57 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2016-03-01 15:58:58 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:58 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:58 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:58 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:58 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 15:58:58 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-01 16:11:37 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-03-01 16:11:37 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-03-01 16:11:37 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2016-03-01 16:20:37 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-03-01 16:20:37 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-03-01 16:20:37 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+** (gedit:2890): CRITICAL **: gedit_multi_notebook_get_active_tab: assertion 'GEDIT_IS_MULTI_NOTEBOOK (mnb)' failed
+
+(gedit:2890): Gtk-CRITICAL **: gtk_action_group_get_action: assertion 'GTK_IS_ACTION_GROUP (action_group)' failed
+
+(gedit:2890): Gtk-CRITICAL **: gtk_action_set_sensitive: assertion 'GTK_IS_ACTION (action)' failed
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179ddc0 is mapped but visible child GtkScrollbar 0x17a9c00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179ddc0 is mapped but visible child GtkScrollbar 0x17a9a00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179d880 is mapped but visible child GtkScrollbar 0x17a8c00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179ddc0 is mapped but visible child GtkScrollbar 0x17a9c00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179ddc0 is mapped but visible child GtkScrollbar 0x17a9a00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179d880 is mapped but visible child GtkScrollbar 0x17a8c00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179d880 is mapped but visible child GtkScrollbar 0x17a8c00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179ddc0 is mapped but visible child GtkScrollbar 0x17a9a00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179ddc0 is mapped but visible child GtkScrollbar 0x17a9c00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179d880 is mapped but visible child GtkScrollbar 0x17a8c00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179ddc0 is mapped but visible child GtkScrollbar 0x17a9a00 is not mapped
+
+(gedit:2890): Gtk-WARNING **: GtkScrolledWindow 0x179ddc0 is mapped but visible child GtkScrollbar 0x17a9c00 is not mapped
+
+(deja-dup-monitor:2187): GLib-CRITICAL **: Source ID 63 was not found when attempting to remove it
+
+(deja-dup-monitor:2187): GLib-CRITICAL **: Source ID 63 was not found when attempting to remove it
+ERROR 2016-03-01 16:40:47 unity.settings UnitySettings.cpp:366 Invalid monitor index: -1. Returning index 0 monitor instead.
+
+(deja-dup-monitor:2187): GLib-CRITICAL **: Source ID 103 was not found when attempting to remove it
+
+(deja-dup-monitor:2187): GLib-CRITICAL **: Source ID 103 was not found when attempting to remove it
+ERROR 2016-03-02 11:43:23 unity.settings UnitySettings.cpp:366 Invalid monitor index: -1. Returning index 0 monitor instead.
+
+(deja-dup-monitor:2187): GLib-CRITICAL **: Source ID 139 was not found when attempting to remove it
+
+(deja-dup-monitor:2187): GLib-CRITICAL **: Source ID 139 was not found when attempting to remove it
+ERROR 2016-03-02 15:51:45 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-03-02 15:51:45 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-03-02 15:51:45 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+
+(gnome-terminal:3579): GLib-GIO-CRITICAL **: g_settings_get: the format string may not contain '&' (key 'monospace-font-name' from schema 'org.gnome.desktop.interface'). This call will probably stop working with a future version of glib.
+1456927462164	addons.repository	WARN	Unknown type id when parsing addon: 5
+1456927462166	addons.repository	WARN	Unknown type id when parsing addon: 5
+1456927462168	addons.repository	WARN	Unknown type id when parsing addon: 5
+1456927462810	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+1456927463455	addons.update-checker	WARN	Update manifest for webapps-team@lists.launchpad.net did not contain an updates property
+1456927463470	addons.update-checker	WARN	Update manifest for {2e1445b0-2682-11e1-bfc2-0800200c9a66} did not contain an updates property
+1456927463483	addons.update-checker	WARN	Update manifest for ubufox@ubuntu.com did not contain an updates property
+1456927463491	addons.update-checker	WARN	Update manifest for online-accounts@lists.launchpad.net did not contain an updates property
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'ağ kullanıcı paylaşımı' 255 hatası ile geri döndü: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error Böyle bir dosya ya da dizin yok
+Please ask your system administrator to enable user sharing.
+
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 atk_object_ref_state_set: assertion 'ATK_IS_OBJECT (accessible)' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 atk_state_set_contains_state: assertion 'ATK_IS_STATE_SET (set)' failed
+ERROR 2016-03-02 16:10:12 unityy <unknown>:0 g_object_unref: assertion 'G_IS_OBJECT (object)' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:12 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+ERROR 2016-03-02 16:10:13 unity <unknown>:0 AtkObject* unity_a11y_get_accessible(nux::Object*): assertion 'object != NULL' failed
+Nautilus-Share-Message: Called "net usershare info" but it failed: 'ağ kullanıcı paylaşımı' 255 hatası ile geri döndü: net usershare: cannot open usershare directory /var/lib/samba/usershares. Error Böyle bir dosya ya da dizin yok
+Please ask your system administrator to enable user sharing.
+

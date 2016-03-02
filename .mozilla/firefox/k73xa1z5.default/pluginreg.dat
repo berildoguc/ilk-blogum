@@ -1,0 +1,97 @@
+Generated File. Do not edit.
+
+[HEADER]
+Version:0.17:$
+Arch:x86_64-gcc3:$
+
+[PLUGINS]
+libflashplayer.so:$
+/usr/lib/flashplugin-installer/libflashplayer.so:$
+11.2.202.569:$
+1456577543000:0:0:0:$
+Shockwave Flash 11.2 r202:$
+Shockwave Flash:$
+2
+0:application/x-shockwave-flash:Shockwave Flash:swf:$
+1:application/futuresplash:FutureSplash Player:spl:$
+librhythmbox-itms-detection-plugin.so:$
+/usr/lib/mozilla/plugins/librhythmbox-itms-detection-plugin.so:$
+:$
+1398725965000:0:0:0:$
+This plug-in detects the presence of iTunes when opening iTunes Store URLs in a web page with Firefox.:$
+iTunes Application Detector:$
+1
+0:application/itunes-plugin:::$
+libtotem-narrowspace-plugin.so:$
+/usr/lib/mozilla/plugins/libtotem-narrowspace-plugin.so:$
+:$
+1396359855000:0:0:0:$
+The <a href="http://www.gnome.org/">Videos</a> 3.10.1 plugin handles video and audio streams.:$
+QuickTime Plug-in 7.6.6:$
+6
+0:video/quicktime:QuickTime videosu:mov:$
+1:video/mp4:MPEG-4 videosu:mp4:$
+2:image/x-macpaint:MacPaint Bitmap resmi:pntg:$
+3:image/x-quicktime:Macintosh Quickdraw/PICT çizimi:pict, pict1, pict2:$
+4:video/x-m4v:MPEG-4 videosu:m4v:$
+5:application/vnd.apple.mpegurl:HTTP Live Streaming playlist:m3u8:$
+libtotem-gmp-plugin.so:$
+/usr/lib/mozilla/plugins/libtotem-gmp-plugin.so:$
+:$
+1396359855000:0:0:0:$
+The <a href="http://www.gnome.org/">Videos</a> 3.10.1 plugin handles video and audio streams.:$
+Windows Media Player Plug-in 10 (compatible; Videos):$
+13
+0:application/x-mplayer2:AVI videosu:avi, wma, wmv:$
+1:video/x-ms-asf-plugin:ASF videosu:asf, wmv:$
+2:video/x-msvideo:AVI videosu:asf, wmv:$
+3:video/x-ms-asf:ASF videosu:asf:$
+4:video/x-ms-wmv:Windows Media videosu:wmv:$
+5:video/x-wmv:Windows Media videosu:wmv:$
+6:video/x-ms-wvx:Windows Media videosu:wmv:$
+7:video/x-ms-wm:Windows Media videosu:wmv:$
+8:video/x-ms-wmp:Windows Media videosu:wmv:$
+9:application/x-ms-wms:Windows Media videosu:wms:$
+10:application/x-ms-wmp:Windows Media videosu:wmp:$
+11:application/asx:Microsoft ASX çalma listesi:asx:$
+12:audio/x-ms-wma:Windows Media sesi:wma:$
+libtotem-mully-plugin.so:$
+/usr/lib/mozilla/plugins/libtotem-mully-plugin.so:$
+:$
+1396359855000:0:0:0:$
+DivX Web Player version 1.4.0.233:$
+DivX® Web Player:$
+1
+0:video/divx:AVI videosu:divx:$
+libtotem-cone-plugin.so:$
+/usr/lib/mozilla/plugins/libtotem-cone-plugin.so:$
+:$
+1396359855000:0:0:0:$
+The <a href="http://www.gnome.org/">Videos</a> 3.10.1 plugin handles video and audio streams.:$
+VLC Multimedia Plugin (compatible Videos 3.10.1):$
+23
+0:application/x-vlc-plugin:VLC Multimedia Plugin::$
+1:application/vlc:VLC Multimedia Plugin::$
+2:video/x-google-vlc-plugin:VLC Multimedia Plugin::$
+3:application/x-ogg:Ogg çokluortam dosyası:ogg:$
+4:application/ogg:Ogg çokluortam dosyası:ogg:$
+5:audio/ogg:Ogg sesi:oga:$
+6:audio/x-ogg:Ogg sesi:ogg:$
+7:audio/x-vorbis+ogg:Ogg Vorbis sesi:ogg:$
+8:video/ogg:Ogg videosu:ogv:$
+9:video/x-ogg:Ogg videosu:ogg:$
+10:video/x-theora+ogg:Ogg Theora videosu:ogg:$
+11:application/annodex:Annodex değişim biçimi:anx:$
+12:audio/annodex:Annodex Sesi:axa:$
+13:video/annodex:Annodex Videosu:axv:$
+14:video/mpeg:MPEG videosu:mpg, mpeg, mpe:$
+15:audio/wav:WAV sesi:wav:$
+16:audio/x-wav:WAV sesi:wav:$
+17:audio/mpeg:MP3 sesi:mp3:$
+18:application/x-nsv-vp3-mp3:NullSoft videosu:nsv:$
+19:video/flv:Flash videosu:flv:$
+20:video/webm:WebM videosu:webm:$
+21:application/x-totem-plugin:Videos multimedia plugin::$
+22:audio/midi:MIDI sesi:mid, midi:$
+
+[INVALID]
